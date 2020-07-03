@@ -1,0 +1,18 @@
+{% extends 'blog.html' %}
+
+{% block content %}
+
+    {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
+
+<nav class="blog-pagination">
+    {% if prev_url %}
+    <a class="btn btn-outline-primary"  href="{{ prev_url }}">Newer posts</a>
+    {% endif %}
+    {% if next_url %}
+    <a class="btn btn-outline-secondary" href="{{ next_url }}">Older posts</a>
+    {% endif %}
+</nav>
+
+{% endblock %}
